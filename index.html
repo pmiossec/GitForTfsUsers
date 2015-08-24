@@ -15,69 +15,160 @@
 	<section class="slide"><div>
 		<h2><img src="pictures/git.png" alt=""></h2>
 	</div></section>
+
+	<section class="slide"><div>
+		<h2>Pourquoi? 1/n</h2>
+		<h3>Citation!</h3>
+		<br/>
+		<i>-"Le problème c'est que j'ai trop de trucs en check-out [pour le faire]..."<br/>
+(30s de réflexions)<br/>
+-"Ouais, j'ai trop de check-out..."</i>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Pourquoi? 2/n</h2>
+		<h3>Citation!</h3>
+		<br/>
+		<i>-"Je vais pouvoir checkiner cet aprèm'. J'ai 200 fichiers en check-out"<br/>
+-"Moi j'en ai plus de 1000!!!"<br/>
+-"Tu veux péter la build au checkin!?!"<br/>
+-"Si je perd mon poste, le rename de la base de données, c'est mort!"</i>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Pourquoi? 3/n</h2>
+		<h3>Citation!</h3>
+		<br/>
+		<i>(Dit à une personne qui est arrivée il y a 1 mois et 1/2)<br/>
+- Hé! Mais c'est ton premier checkin!<br/>
+- Non, c'est mon 2ème...</i>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Pourquoi? 4/n</h2>
+		<h3>Citation!</h3>
+		<br/>
+		<i>-Ah, au fait, j'ai fait un merge.<br/>
+-Oh merde! Bon ben, je suis obligé de la prendre.</i>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Pourquoi? 5/n</h2>
+		<h3>Citation!</h3>
+		<br/>
+		<i>-Essai de shelver et de recommencer.<br/>
+-Je peux pas j'ai déjà mergé mes modifications!</i>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Pourquoi? 6/n</h2>
+		<h3>Citation!</h3>
+		<i>-Tu veux savoir combien on a archivé de fichiers?<br/>
+(moi)-Ouais, comme ça je pourrais le mettre dans mes citations de "bad practicies"!<br/>
+-19000!<br/>
+-19023 pour être exact...<br/></i>
+PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement détécté par TFS et viennent rendre l'hitorique illisible :(</b>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Pourquoi? 7/n</h2>
+		<a href="http://blog.tfnico.com/2010/10/geek-and-poke-versus-subversion.html" target="_blank">Geek & Poke Vs Tfs</a><br/>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Pourquoi? 8/n</h2>
+		<h3>Parce que c'est fun!</h3>
+		<ul>
+			<li><a href="http://hashrocket.com/blog/posts/edge-of-tomorrow-explained-in-git" target="_blank">Edge of Tomorrow, Explained in Git</a></li>
+			<li><a href="http://hashrocket.com/blog/posts/x-men-days-of-future-past-explained-in-git" target="_blank">X-Men: Days of Future Past, Explained in Git</a></li>
+			<li><a href="https://github.com/vbarbaresi/MetroGit/network" target="_blank">Ligne de métro de Paris</a></li>
+			<li>Gource: & "c:\tools\gource\gource.exe" -f -s 0.01 "C:\Dev\Git\git-tfs"</li>
+		</ul>
+	</div></section>
+
 	<section class="slide"><div>
 		<h2>Caractéristiques 1/2</h2>
 		<ul>
 			<li>Souple (il y a souvent plusieurs manières de faire la même chose) et rapide</li>
-			<li>Fiable (prends --mieux-- soin de vos données!) </li>
+			<li>Fiable (prends --mieux-- soin de vos données!) 1 ou 2 corruption de données recencée! </li>
+			<li>Sûr (ceinture et bretelles!) </li>
 			<li>Meilleur gestion des branches (Création TRES facile, merges BEAUCOUP plus faciles) </li>
 			<li>Distribué (et fondamentalement local)</li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Caractéristiques 2/2</h2>
 		<ul>
 			<li>Aide le développeur à mieux faire son travail (meilleur historique, bisect, blame, staging area,...) </li>
 			<li>Couteau suisse du développeur</li>
-			<li>Avenir de la gestion de source </li>
+			<li>Avenir (en fait déjà le présent!) de la gestion de source </li>
 			<li>Facilité de contribution à un projet (workflow inversé & gestion des droits!)</li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Avantages par rapport à Tfs... 1/3</h2>
-		<ul></li>
-			<li>Late branching!!!</li>
+		<ul>
+			<li>(Very!) Cheap branching!!!</li>
 			<li>Ne contraint pas l'utilisateur</li>
 			<li>BEAUCOUP plus grande souplesse de développement et de commit (commit de parties de fichiers!) </li>
 			<li>Branches et commits locaux (expérimentation, retour en arrières, meilleur développement, baby steps,…)</li>
 			<li>Meilleur connaissance des modifications des autres utilisateurs (visualisation de l’historique + diffs) </li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Avantages par rapport à Tfs... 2/3</h2>
-		<ul></li>
+		<ul>
 			<li>Remplacement du shelving (un des trucs les plus mals foutus avec Tfs!) par les branches ( et on peut faire plusieurs commits) </li>
-			<li>Possibilité d’annuler des commits (revert)</li>
 			<li>Trouver une régression facilement en testant les commits successivement par dichotomie (bisect) </li>
 			<li>Cherry Picking (prendre un commit intérressant d’une branche et l’appliquer sur la branche actuelle)</li>
 			<li>Meilleur Historique (plus de facilité à retrouver l’introduction d’un bug)</li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Avantages par rapport à Tfs... 3/3</h2>
-		<ul></li>
+		<ul>
 			<li>BEAUCOUP plus rapide!</li>
 			<li>Connaissance à tout instant de quelle version on utilise localement </li>
 			<li>Plus de mode connecté/déconnecté de TFS :D</li>
 			<li>Backport de commit entre branches plus facile </li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Autres petits trucs cool</h2>
-		<ul></li>
-			<li>On peut l'utiliser avec autre chose que Visual Studio</li>
-			<li>On peut l'utiliser 100% localement --POC--</li>
+		<ul>
+			<li>Workflows!!</li>
+			<li>On peut l'utiliser avec autre chose que Visual Studio (readonly!?!)</li>
+			<li>On peut l'utiliser 100% localement --POC-- => on peut tout versionner localement!</li>
 			<li>...et pousser sur un serveur qu'a posteriori!</li>
 		</ul>
 	</div></section>
+
+	<section class="slide"><div>
+		<h2>Les trucs moins cool</h2>
+		<i>...necessitant une autre organisation</i>
+		<ul>
+			<li>Un peu plus dur à apprendre</li>
+			<li>Tout dans un seul dépot</li>
+			<li>Que du contenu mergeable</li>
+			<li>Pas de binaires</li>
+			<li>Workflows</li>
+		</ul>
+	</div></section>
+
 	<section class="slide"><div>
 		<h2>Principe de base de Git</h2>
 		<ul> 
-			<li>un gestionnaire de contenu (et non de différence!) </li>
-			<li>stocké sous la forme d’un <i>graphe orienté acyclique</i> ou DAG </li>
+			<li>un gestionnaire de contenu (et non de différences!) </li>
+			<li>stocké sous la forme d’un <i>graphe orienté acyclique</i> ou <a href="https://lh3.googleusercontent.com/pBdELGlA7vOMhyBBXFTBYNc1pIGoDMHT0J86qx8UJWYX5kIVO_7Bv5HgtofBHxj6G81ujkT_VqqflZDfZ28bBPfRtoEx5_F8CcHzJtMlgtu7Gq1FDdgfLSNIug">DAG</a> </li>
 			<li>accessible avec des références</li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Notions</h2>
 		<ul> 
@@ -88,8 +179,18 @@
 			<li>rebase/merge</li>
 		</ul>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Demo...</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Doc</h2>
+		<ul> 
+			<li>https://gist.github.com/pmiossec/333645ffd7d71670b731</li>
+			<li>http://merrigrove.blogspot.fr/2014/02/why-heck-is-git-so-hard-places-model-ok.html</li>
+		</ul>
+
 	</div></section>
 
 	<!--
