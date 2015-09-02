@@ -72,7 +72,9 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 
 	<section class="slide"><div>
 		<h2>Pourquoi? 7/n</h2>
+		- Ne plus perdre un seul développement
 		<a href="http://blog.tfnico.com/2010/10/geek-and-poke-versus-subversion.html" target="_blank">Geek & Poke Vs Tfs</a><br/>
+		- Pouvoir coller au vrai workflow d'un développeur (essais/retours en arrière)
 	</div></section>
 	
 	<section class="slide"><div>
@@ -90,9 +92,9 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 		<h2>Caractéristiques 1/2</h2>
 		<ul>
 			<li>Souple (il y a souvent plusieurs manières de faire la même chose) et rapide</li>
-			<li>Fiable (prends --mieux-- soin de vos données!) 1 ou 2 corruption de données recencée! </li>
-			<li>Sûr (ceinture et bretelles!) </li>
-			<li>Meilleur gestion des branches (Création TRES facile, merges BEAUCOUP plus faciles) </li>
+			<li>Fiable (prends --mieux-- soin de vos données! /Sha1) 1 ou 2 corruption de données recencée! </li>
+			<li>Sûr (ceinture et bretelles!). Toute erreur est récupérable si on a commité ses changements</li>
+			<li>Meilleur gestion des branches (Création TRES facile, merges BEAUCOUP plus faciles --3way merge--) </li>
 			<li>Distribué (et fondamentalement local)</li>
 		</ul>
 	</div></section>
@@ -110,8 +112,9 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 	<section class="slide"><div>
 		<h2>Avantages par rapport à Tfs... 1/3</h2>
 		<ul>
+			<li>(En très court) Ne contraint pas l'utilisateur</li>
 			<li>(Very!) Cheap branching!!!</li>
-			<li>Ne contraint pas l'utilisateur</li>
+			<li>Commit partiel</li>
 			<li>BEAUCOUP plus grande souplesse de développement et de commit (commit de parties de fichiers!) </li>
 			<li>Branches et commits locaux (expérimentation, retour en arrières, meilleur développement, baby steps,…)</li>
 			<li>Meilleur connaissance des modifications des autres utilisateurs (visualisation de l’historique + diffs) </li>
@@ -121,10 +124,11 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 	<section class="slide"><div>
 		<h2>Avantages par rapport à Tfs... 2/3</h2>
 		<ul>
-			<li>Remplacement du shelving (un des trucs les plus mals foutus avec Tfs!) par les branches ( et on peut faire plusieurs commits) </li>
+			<li>Remplacement du shelving (un des trucs les plus mals foutus avec Tfs!) par les branches ( et on peut faire plusieurs commits!) </li>
 			<li>Trouver une régression facilement en testant les commits successivement par dichotomie (bisect) </li>
 			<li>Cherry Picking (prendre un commit intérressant d’une branche et l’appliquer sur la branche actuelle)</li>
 			<li>Meilleur Historique (plus de facilité à retrouver l’introduction d’un bug)</li>
+			<li>On peut merger n'importe quelle branche avec une autre branche</li>
 		</ul>
 	</div></section>
 
@@ -132,19 +136,22 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 		<h2>Avantages par rapport à Tfs... 3/3</h2>
 		<ul>
 			<li>BEAUCOUP plus rapide!</li>
-			<li>Connaissance à tout instant de quelle version on utilise localement </li>
+			<li>Network & hard drive size friendly (Tunisie/Inde friendly ;) )</li>
+			<li>Connaissance à tout instant de quelle version on utilise localement (GetLatestVersion?)</li>
 			<li>Plus de mode connecté/déconnecté de TFS :D</li>
 			<li>Backport de commit entre branches plus facile </li>
+			<li>Pull requests</li>
 		</ul>
 	</div></section>
 
 	<section class="slide"><div>
 		<h2>Autres petits trucs cool</h2>
 		<ul>
-			<li>Workflows!!</li>
+			<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">Workflows!!</a></li>
 			<li>On peut l'utiliser avec autre chose que Visual Studio (readonly!?!)</li>
 			<li>On peut l'utiliser 100% localement --POC-- => on peut tout versionner localement!</li>
 			<li>...et pousser sur un serveur qu'a posteriori!</li>
+			<li>BEAUCOUP de doc (mais surtout pour la ligne de commande ;) )</li>
 		</ul>
 	</div></section>
 
@@ -152,11 +159,9 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 		<h2>Les trucs moins cool</h2>
 		<i>...necessitant une autre organisation</i>
 		<ul>
-			<li>Un peu plus dur à apprendre</li>
+			<li>Un peu plus dur à apprendre (mais empowerment!)</li>
 			<li>Tout dans un seul dépot</li>
-			<li>Que du contenu mergeable</li>
-			<li>Pas de binaires</li>
-			<li>Workflows</li>
+			<li>Pas de binaires / que du contenu mergeable</li>
 		</ul>
 	</div></section>
 
@@ -172,11 +177,24 @@ PS: <b>-En plus seulement 400 véritablement modifiés mais le reste faussement 
 	<section class="slide"><div>
 		<h2>Notions</h2>
 		<ul> 
-			<li>Référence: locales (branches), distantes (remote), HEAD </li>
+			<li>Référence: locales (branches), distantes (remote => origin/upstream), HEAD, tags </li>
 			<li>sha1</li>
-			<li>Staging area</li>
-			<li>workflows (strategie de gestion de branches)</li>
-			<li>rebase/merge</li>
+			<li>init/clone, commit, checkout, fetch (pull/pull -r), push, rebase/merge, cherrypick</li>
+			<li><a href="http://merrigrove.blogspot.fr/2014/02/why-heck-is-git-so-hard-places-model-ok.html">Staging area</a></li>
+			<li>workflows (strategie de gestion de branches) : GitFlow, GitHub Flow, ...</li>
+			<li>.gitignore</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Notions avancées</h2>
+		<ul> 
+			<li>Detached HEAD, Fast forward</li>
+			<li>Reset</li>
+			<li>Rebase interactif, rebase onto</li>
+			<li>Reflog</li>
+			<li>Bisect</li>
+			<li>Bare repository</li>
 		</ul>
 	</div></section>
 
